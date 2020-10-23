@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=TicTacToy
+Comment=Simple TIC-TAC-toe game
+Exec=com.github.alexkdeveloper.tictactoy %U
+Icon=com.github.alexkdeveloper.tictactoy
+Terminal=false
+Categories=Game;
+Keywords=tictactoe;game;logic;
