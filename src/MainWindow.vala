@@ -36,7 +36,7 @@ namespace TicTacToe {
         headerbar.show_close_button = true;
         set_titlebar(headerbar);
         var new_game_button = new Gtk.Button ();
-            new_game_button.set_image (new Gtk.Image.from_icon_name ("input-gaming", Gtk.IconSize.SMALL_TOOLBAR));
+            new_game_button.set_image (new Gtk.Image.from_icon_name ("input-gaming-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
             new_game_button.vexpand = false;
           new_game_button.set_tooltip_text("new game");
           new_game_button.clicked.connect(on_new_game_clicked);
