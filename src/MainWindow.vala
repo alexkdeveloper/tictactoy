@@ -211,10 +211,10 @@ namespace TicTacToe {
         m[k,l]=s;
     }
     private void on_new_game_clicked(){
-    var dialog_delete_station = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Start new game?");
-         dialog_delete_station.set_title("Question");
-         Gtk.ResponseType result = (ResponseType)dialog_delete_station.run ();
-         dialog_delete_station.destroy();
+    var dialog = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Start new game?");
+         dialog.set_title("Question");
+         Gtk.ResponseType result = (ResponseType)dialog.run ();
+         dialog.destroy();
          if(result==Gtk.ResponseType.OK){
              new_game();
       }
