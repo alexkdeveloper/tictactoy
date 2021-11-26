@@ -26,18 +26,17 @@ namespace TicTacToe {
       construct {
       var css_provider = new Gtk.CssProvider();
        try {
-                css_provider.load_from_data(".symbols_size {font-size: 60px}");
+                css_provider.load_from_data(".symbols_size {font-size: 50px}");
                 Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (Error e) {
                 error ("Cannot load CSS stylesheet: %s", e.message);
         }
-        get_style_context ().add_class ("rounded");
         Gtk.HeaderBar headerbar = new Gtk.HeaderBar();
         headerbar.get_style_context().add_class(Gtk.STYLE_CLASS_FLAT);
         headerbar.show_close_button = true;
         set_titlebar(headerbar);
         var new_game_button = new Gtk.Button ();
-            new_game_button.set_image (new Gtk.Image.from_icon_name ("input-gaming", Gtk.IconSize.LARGE_TOOLBAR));
+            new_game_button.set_image (new Gtk.Image.from_icon_name ("input-gaming", Gtk.IconSize.SMALL_TOOLBAR));
             new_game_button.vexpand = false;
           new_game_button.set_tooltip_text("new game");
           new_game_button.clicked.connect(on_new_game_clicked);
@@ -212,19 +211,12 @@ namespace TicTacToe {
         m[k,l]=s;
     }
     private void on_new_game_clicked(){
-      var dialog = new Granite.MessageDialog.with_image_from_icon_name (_("Question"), _("Start new game?"), "dialog-question", Gtk.ButtonsType.NONE);
-      dialog.add_button (_("No"), 0);
-      dialog.add_button (_("Start new game"), 1);
-      dialog.show_all ();
-      int result = dialog.run ();
-      switch (result) {
-          case 0:
-              dialog.destroy ();
-              break;
-          case 1:
-              new_game();
-              dialog.destroy ();
-              break;
+    var dialog = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Start new game?");
+         dialog.set_title("Question");
+         Gtk.ResponseType result = (ResponseType)dialog.run ();
+         dialog.destroy();
+         if(result==Gtk.ResponseType.OK){
+             new_game();
       }
     }
     private void massive(){
@@ -343,11 +335,11 @@ namespace TicTacToe {
         return k==9;
     }
     private void alert (string str){
-           var dialog = new Granite.MessageDialog.with_image_from_icon_name ("Message", str, "dialog-warning");
-                  dialog.show_all ();
-                  dialog.run ();
-                  dialog.destroy ();
-                  new_game();
+          var dialog_alert = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, str);
+          dialog_alert.set_title("Message");
+          dialog_alert.run();
+          dialog_alert.destroy();
+          new_game();
        }
    }
 }
