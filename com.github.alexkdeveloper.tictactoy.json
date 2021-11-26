@@ -1,0 +1,36 @@
+{
+"app-id": "com.github.alexkdeveloper.tictactoy",
+"runtime": "io.elementary.Platform",
+"runtime-version": "6",
+"sdk": "io.elementary.Sdk",
+"command": "com.github.alexkdeveloper.tictactoy",
+"finish-args": [
+ "--share=ipc",
+ "--socket=fallback-x11",
+ "--socket=wayland"
+],
+"cleanup": [
+ "/include",
+ "/lib/pkgconfig",
+ "/man",
+ "/share/doc",
+ "/share/gtk-doc",
+ "/share/man",
+ "/share/pkgconfig",
+ "/share/vala",
+ "*.la",
+ "*.a"
+],
+"modules": [
+ {
+    "name": "tictactoy",
+    "buildsystem": "meson",
+    "sources": [
+        {
+            "type": "dir",
+            "path": "."
+        }
+    ]
+  }
+]
+}
