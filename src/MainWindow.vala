@@ -212,9 +212,9 @@ namespace TicTacToe {
         m[k,l]=s;
     }
     private void on_new_game_clicked(){
-      var dialog = new Granite.MessageDialog.with_image_from_icon_name (_("Question"), _("Start new game?"), "dialog-question", Gtk.ButtonsType.NONE);
-      dialog.add_button (_("No"), 0);
-      dialog.add_button (_("Start new game"), 1);
+      var dialog = new Granite.MessageDialog.with_image_from_icon_name ("Question", "Start new game?", "dialog-question", Gtk.ButtonsType.NONE);
+      dialog.add_button ("No", 0);
+      dialog.add_button ("Start new game", 1);
       dialog.show_all ();
       int result = dialog.run ();
       switch (result) {
@@ -275,7 +275,7 @@ namespace TicTacToe {
             return;
         }
         if (is_last()){
-            alert("DRAWN GAME!");
+            alert("DRAW!");
             return;
         }
         if (s1.str == "noo"||s4.str == "noo"||s7.str == "noo"){
