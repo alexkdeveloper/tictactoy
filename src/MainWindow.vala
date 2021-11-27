@@ -275,7 +275,7 @@ namespace TicTacToe {
             return;
         }
         if (is_last()){
-            alert("DRAW!");
+            alert("DRAWN GAME!");
             return;
         }
         if (s1.str == "noo"||s4.str == "noo"||s7.str == "noo"){
