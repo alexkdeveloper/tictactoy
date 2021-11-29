@@ -14,6 +14,7 @@ namespace TicTacToe {
         private Button b_8;
         private Button b_9;
         private string[,] m;
+        private bool first_X = true;
 
         public MainWindow(Gtk.Application application) {
             GLib.Object(application: application,
@@ -98,7 +99,11 @@ namespace TicTacToe {
            if (m[0,0] != "n"){
             return;
         }
-        show_symbol(0,0,"x");
+        if(first_X){
+            show_symbol(0,0,"x");
+        }else{
+            show_symbol(0,0,"o");
+        }
         logic();
       }
 
@@ -106,7 +111,11 @@ namespace TicTacToe {
           if (m[0,1] != "n"){
             return;
         }
-        show_symbol(0,1,"x");
+        if(first_X){
+            show_symbol(0,1,"x");
+        }else{
+            show_symbol(0,1,"o");
+        }
         logic();
       }
 
@@ -114,7 +123,11 @@ namespace TicTacToe {
           if (m[0,2] != "n"){
             return;
         }
-        show_symbol(0,2,"x");
+        if(first_X){
+            show_symbol(0,2,"x");
+        }else{
+            show_symbol(0,2,"o");
+        }
         logic();
       }
 
@@ -122,7 +135,11 @@ namespace TicTacToe {
           if (m[1,0] != "n"){
             return;
         }
-        show_symbol(1,0,"x");
+        if(first_X){
+            show_symbol(1,0,"x");
+        }else{
+            show_symbol(1,0,"o");
+        }
         logic();
       }
 
@@ -130,7 +147,11 @@ namespace TicTacToe {
           if (m[1,1] != "n"){
             return;
         }
-        show_symbol(1,1,"x");
+        if(first_X){
+            show_symbol(1,1,"x");
+        }else{
+            show_symbol(1,1,"o");
+        }
         logic();
       }
 
@@ -138,7 +159,11 @@ namespace TicTacToe {
           if (m[1,2] != "n"){
             return;
         }
-        show_symbol(1,2,"x");
+        if(first_X){
+            show_symbol(1,2,"x");
+        }else{
+            show_symbol(1,2,"o");
+        }
         logic();
       }
 
@@ -146,7 +171,11 @@ namespace TicTacToe {
           if (m[2,0] != "n"){
             return;
         }
-        show_symbol(2,0,"x");
+        if(first_X){
+            show_symbol(2,0,"x");
+        }else{
+            show_symbol(2,0,"o");
+        }
         logic();
       }
 
@@ -154,7 +183,11 @@ namespace TicTacToe {
           if (m[2,1] != "n"){
             return;
         }
-        show_symbol(2,1,"x");
+        if(first_X){
+            show_symbol(2,1,"x");
+        }else{
+            show_symbol(2,1,"o");
+        }
         logic();
       }
 
@@ -162,7 +195,11 @@ namespace TicTacToe {
           if (m[2,2] != "n"){
             return;
         }
-        show_symbol(2,2,"x");
+        if(first_X){
+            show_symbol(2,2,"x");
+        }else{
+            show_symbol(2,2,"o");
+        }
         logic();
       }
       private void show_symbol(int k,int l, string s){
@@ -214,7 +251,8 @@ namespace TicTacToe {
     private void on_new_game_clicked(){
       var dialog = new Granite.MessageDialog.with_image_from_icon_name ("Question", "Start new game?", "dialog-question", Gtk.ButtonsType.NONE);
       dialog.add_button ("No", 0);
-      dialog.add_button ("Start new game", 1);
+      dialog.add_button ("New game with X", 1);
+      dialog.add_button ("New game with O", 2);
       dialog.show_all ();
       int result = dialog.run ();
       switch (result) {
@@ -222,7 +260,14 @@ namespace TicTacToe {
               dialog.destroy ();
               break;
           case 1:
+              first_X = true;
               new_game();
+              dialog.destroy ();
+              break;
+          case 2:
+              first_X = false;
+              new_game();
+              logic();
               dialog.destroy ();
               break;
       }
@@ -269,8 +314,19 @@ namespace TicTacToe {
         s7.append(m[0,0]).append(m[1,1]).append(m[2,2]);
         s8.append(m[2,0]).append(m[1,1]).append(m[0,2]);
 
-        if (s1.str == "xxx"||s2.str == "xxx"||s3.str == "xxx"
-                ||s4.str == "xxx"||s5.str == "xxx"||s6.str == "xxx"||s7.str == "xxx"||s8.str == "xxx"){
+        string a;
+        string b;
+
+        if(first_X){
+            a = "o";
+            b = "x";
+        }else{
+            a = "x";
+            b = "o";
+        }
+
+        if (s1.str == b+b+b||s2.str == b+b+b||s3.str == b+b+b
+                ||s4.str == b+b+b||s5.str == b+b+b||s6.str == b+b+b||s7.str == b+b+b||s8.str == b+b+b){
             alert("YOU WON!");
             return;
         }
@@ -278,51 +334,51 @@ namespace TicTacToe {
             alert("DRAWN GAME!");
             return;
         }
-        if (s1.str == "noo"||s4.str == "noo"||s7.str == "noo"){
-            show_symbol(0,0,"o");
+        if (s1.str == "n"+a+a||s4.str == "n"+a+a||s7.str == "n"+a+a){
+            show_symbol(0,0,a);
             alert("YOU LOST!");
-        }else if (s1.str == "ono"||s5.str == "noo"){
-            show_symbol(0,1,"o");
+        }else if (s1.str == a+"n"+a||s5.str == "n"+a+a){
+            show_symbol(0,1,a);
             alert("YOU LOST!");
-        }else if (s1.str == "oon"||s6.str == "noo"||s8.str == "oon"){
-            show_symbol(0,2,"o");
+        }else if (s1.str == a+a+"n"||s6.str == "n"+a+a||s8.str == a+a+"n"){
+            show_symbol(0,2,a);
             alert("YOU LOST!");
-        }else if (s2.str == "noo"||s4.str == "ono"){
-            show_symbol(1,0,"o");
+        }else if (s2.str == "n"+a+a||s4.str == a+"n"+a){
+            show_symbol(1,0,a);
             alert("YOU LOST!");
-        }else if (s2.str == "ono"||s5.str == "ono"||s7.str == "ono"||s8.str == "ono"){
-            show_symbol(1,1,"o");
+        }else if (s2.str == a+"n"+a||s5.str == a+"n"+a||s7.str == a+"n"+a||s8.str == a+"n"+a){
+            show_symbol(1,1,a);
             alert("YOU LOST!");
-        }else if (s2.str == "oon"||s6.str == "ono"){
-            show_symbol(1,2,"o");
+        }else if (s2.str == a+a+"n"||s6.str == a+"n"+a){
+            show_symbol(1,2,a);
             alert("YOU LOST!");
-        }else if (s3.str == "noo"||s4.str == "oon"||s8.str == "noo"){
-            show_symbol(2,0,"o");
+        }else if (s3.str == "n"+a+a||s4.str == a+a+"n"||s8.str == "n"+a+a){
+            show_symbol(2,0,a);
             alert("YOU LOST!");
-        }else if (s3.str == "ono"||s5.str == "oon"){
-            show_symbol(2,1,"o");
+        }else if (s3.str == a+"n"+a||s5.str == a+a+"n"){
+            show_symbol(2,1,a);
             alert("YOU LOST!");
-        }else if (s3.str == "oon"||s6.str == "oon"||s7.str == "oon"){
-            show_symbol(2,2,"o");
+        }else if (s3.str == a+a+"n"||s6.str == a+a+"n"||s7.str == a+a+"n"){
+            show_symbol(2,2,a);
             alert("YOU LOST!");
-        }else if (s1.str == "nxx"||s4.str == "nxx"||s7.str == "nxx"){
-            show_symbol(0,0,"o");
-        }else if (s1.str == "xnx"||s5.str == "nxx"){
-            show_symbol(0,1,"o");
-        }else if (s1.str == "xxn"||s6.str == "nxx"||s8.str == "xxn"){
-            show_symbol(0,2,"o");
-        }else if (s2.str == "nxx"||s4.str == "xnx"){
-            show_symbol(1,0,"o");
-        }else if (s2.str == "xnx"||s5.str == "xnx"||s7.str == "xnx"||s8.str == "xnx"){
-            show_symbol(1,1,"o");
-        }else if (s2.str == "xxn"||s6.str == "xnx"){
-            show_symbol(1,2,"o");
-        }else if (s3.str == "nxx"||s4.str == "xxn"||s8.str == "nxx"){
-            show_symbol(2,0,"o");
-        }else if (s3.str == "xnx"||s5.str == "xxn"){
-            show_symbol(2,1,"o");
-        }else if (s3.str == "xxn"||s6.str == "xxn"||s7.str == "xxn"){
-            show_symbol(2,2,"o");
+        }else if (s1.str == "n"+b+b||s4.str == "n"+b+b||s7.str == "n"+b+b){
+            show_symbol(0,0,a);
+        }else if (s1.str == b+"n"+b||s5.str == "n"+b+b){
+            show_symbol(0,1,a);
+        }else if (s1.str == b+b+"n"||s6.str == "n"+b+b||s8.str == b+b+"n"){
+            show_symbol(0,2,a);
+        }else if (s2.str == "n"+b+b||s4.str == b+"n"+b){
+            show_symbol(1,0,a);
+        }else if (s2.str == b+"n"+b||s5.str == b+"n"+b||s7.str == b+"n"+b||s8.str == b+"n"+b){
+            show_symbol(1,1,a);
+        }else if (s2.str == b+b+"n"||s6.str == b+"n"+b){
+            show_symbol(1,2,a);
+        }else if (s3.str == "n"+b+b||s4.str == b+b+"n"||s8.str == "n"+b+b){
+            show_symbol(2,0,a);
+        }else if (s3.str == b+"n"+b||s5.str == b+b+"n"){
+            show_symbol(2,1,a);
+        }else if (s3.str == b+b+"n"||s6.str == b+b+"n"||s7.str == b+b+"n"){
+            show_symbol(2,2,a);
         }else {
             int p=0;
             int q=0;
@@ -330,7 +386,10 @@ namespace TicTacToe {
                   p = Random.int_range(0,3);
                   q = Random.int_range(0,3);
               }while (m[p,q] != "n");
-            show_symbol(p,q,"o");
+            show_symbol(p,q,a);
+        }
+        if(!first_X&&is_last()){
+            logic();
         }
     }
     private bool is_last(){
@@ -348,6 +407,9 @@ namespace TicTacToe {
                   dialog.run ();
                   dialog.destroy ();
                   new_game();
+                  if(!first_X){
+                      logic();
+                  }
        }
    }
 }
