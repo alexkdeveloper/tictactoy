@@ -14,7 +14,7 @@ namespace TicTacToe {
         private Button b_8;
         private Button b_9;
         private string[,] m;
-        private bool first_X = true;
+        private bool human_start_X = true;
 
         public MainWindow(Gtk.Application application) {
             GLib.Object(application: application,
@@ -99,7 +99,7 @@ namespace TicTacToe {
            if (m[0,0] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(0,0,"x");
         }else{
             show_symbol(0,0,"o");
@@ -111,7 +111,7 @@ namespace TicTacToe {
           if (m[0,1] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(0,1,"x");
         }else{
             show_symbol(0,1,"o");
@@ -123,7 +123,7 @@ namespace TicTacToe {
           if (m[0,2] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(0,2,"x");
         }else{
             show_symbol(0,2,"o");
@@ -135,7 +135,7 @@ namespace TicTacToe {
           if (m[1,0] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(1,0,"x");
         }else{
             show_symbol(1,0,"o");
@@ -147,7 +147,7 @@ namespace TicTacToe {
           if (m[1,1] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(1,1,"x");
         }else{
             show_symbol(1,1,"o");
@@ -159,7 +159,7 @@ namespace TicTacToe {
           if (m[1,2] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(1,2,"x");
         }else{
             show_symbol(1,2,"o");
@@ -171,7 +171,7 @@ namespace TicTacToe {
           if (m[2,0] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(2,0,"x");
         }else{
             show_symbol(2,0,"o");
@@ -183,7 +183,7 @@ namespace TicTacToe {
           if (m[2,1] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(2,1,"x");
         }else{
             show_symbol(2,1,"o");
@@ -195,7 +195,7 @@ namespace TicTacToe {
           if (m[2,2] != "n"){
             return;
         }
-        if(first_X){
+        if(human_start_X){
             show_symbol(2,2,"x");
         }else{
             show_symbol(2,2,"o");
@@ -260,12 +260,12 @@ namespace TicTacToe {
               dialog.destroy ();
               break;
           case 1:
-              first_X = true;
+              human_start_X = true;
               new_game();
               dialog.destroy ();
               break;
           case 2:
-              first_X = false;
+              human_start_X = false;
               new_game();
               logic();
               dialog.destroy ();
@@ -317,7 +317,7 @@ namespace TicTacToe {
         string a;
         string b;
 
-        if(first_X){
+        if(human_start_X){
             a = "o";
             b = "x";
         }else{
@@ -388,7 +388,7 @@ namespace TicTacToe {
               }while (m[p,q] != "n");
             show_symbol(p,q,a);
         }
-        if(!first_X&&is_last()){
+        if(!human_start_X&&is_last()){
             logic();
         }
     }
@@ -407,7 +407,7 @@ namespace TicTacToe {
                   dialog.run ();
                   dialog.destroy ();
                   new_game();
-                  if(!first_X){
+                  if(!human_start_X){
                       logic();
                   }
        }
