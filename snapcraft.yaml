@@ -17,7 +17,7 @@ apps:
     command: desktop-launch $SNAP/usr/bin/com.github.alexkdeveloper.tictactoy
     desktop: usr/share/applications/com.github.alexkdeveloper.tictactoy.desktop
     plugs: [home, x11, gsettings, locale-control]
-    slots: [ dbus-easyssh ]
+    slots: [ dbus-tictactoy ]
 
 plugs:
     gnome-3-28-1804:
@@ -61,7 +61,7 @@ parts:
             - libvte-2.91-dev
     granite:
         plugin: cmake
-        source: https://github.com/elementary/granite/archive/5.2.2.tar.gz
+        source: https://github.com/elementary/granite/archive/6.2.0.tar.gz
         source-type: tar
         after: [valac]
         configflags: [-DCMAKE_BUILD_TYPE=Release, -DCMAKE_INSTALL_PREFIX=/usr, -DCMAKE_INSTALL_LIBDIR=/usr/lib]
@@ -85,7 +85,7 @@ parts:
           mkdir -pv $SNAPCRAFT_PART_INSTALL/gnome-platform
     valac:
       plugin: autotools
-      source: https://download.gnome.org/sources/vala/0.40/vala-0.40.13.tar.xz
+      source: https://download.gnome.org/sources/vala/0.54/vala-0.54.4.tar.xz
       build-packages:
          - flex
          - bison
