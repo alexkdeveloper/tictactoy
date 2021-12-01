@@ -64,7 +64,6 @@ parts:
         source: https://github.com/elementary/granite/archive/6.2.0.tar.gz
         source-type: tar
         after: [valac]
-        configflags: [-DCMAKE_BUILD_TYPE=Release, -DCMAKE_INSTALL_PREFIX=/usr, -DCMAKE_INSTALL_LIBDIR=/usr/lib]
         build-packages:
             - build-essential
             - libgee-0.8-dev
