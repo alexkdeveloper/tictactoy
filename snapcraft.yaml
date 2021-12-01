@@ -1,0 +1,95 @@
+name: tictactoy
+version: 1.0.0
+summary: Simple TIC-TAC-toe game
+description: A simple TIC-TAC-toe game. Get ahead of your opponent by first filling in the fields horizontally, vertically, or diagonally. Don't let your opponent do the same!
+base: core20
+icon: data/icons/24/com.github.alexkdeveloper.tictactoy.png
+confinement: strict
+
+slots:
+  dbus-tictactoy:
+    interface: dbus
+    bus: session
+    name: com.github.alexkdeveloper.tictactoy
+
+apps:
+  tictactoy:
+    command: desktop-launch $SNAP/usr/bin/com.github.alexkdeveloper.tictactoy
+    desktop: usr/share/applications/com.github.alexkdeveloper.tictactoy.desktop
+    plugs: [home, x11, gsettings, locale-control]
+    slots: [ dbus-easyssh ]
+
+plugs:
+    gnome-3-28-1804:
+        interface: content
+        target: $SNAP/gnome-platform
+        default-provider: gnome-3-28-1804
+    gtk-3-themes:
+        interface: content
+        target: $SNAP/data-dir/themes
+        default-provider: gtk-common-themes
+    icon-themes:
+        interface: content
+        target: $SNAP/data-dir/icons
+        default-provider: gtk-common-themes
+    sound-themes:
+        interface: content
+        target: $SNAP/data-dir/sounds
+        default-provider: gtk-common-themes
+
+parts:
+
+    tictactoy:
+        plugin: meson
+        meson-parameters:
+          - --prefix=/usr
+        source: https://github.com/alexkdeveloper/tictactoy.git
+        source-type: git
+        after: [valac, granite, desktop-gnome-platform]
+        build-packages:
+            - build-essential
+            - intltool
+            - libgee-0.8-dev
+            - debhelper
+            - libgtk-3-dev
+        stage-packages:
+            - gobject-introspection
+            - libgee-0.8-2
+            - libgtk-3-0
+            - locales-all
+            - gpg
+            - libvte-2.91-dev
+    granite:
+        plugin: cmake
+        source: https://github.com/elementary/granite/archive/5.2.2.tar.gz
+        source-type: tar
+        after: [valac]
+        configflags: [-DCMAKE_BUILD_TYPE=Release, -DCMAKE_INSTALL_PREFIX=/usr, -DCMAKE_INSTALL_LIBDIR=/usr/lib]
+        build-packages:
+            - build-essential
+            - libgee-0.8-dev
+            - libgirepository1.0-dev
+            - libgtk-3-dev
+            - cmake
+            - gobject-introspection
+    desktop-gnome-platform:
+        source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+        source-subdir: gtk
+        plugin: make
+        make-parameters: ["FLAVOR=gtk3"]
+        build-packages:
+          - build-essential
+          - libgtk-3-dev
+        override-build: |
+          snapcraftctl build
+          mkdir -pv $SNAPCRAFT_PART_INSTALL/gnome-platform
+    valac:
+      plugin: autotools
+      source: https://download.gnome.org/sources/vala/0.40/vala-0.40.13.tar.xz
+      build-packages:
+         - flex
+         - bison
+         - build-essential
+         - libglib2.0-dev
+         - libgraphviz-dev
+
