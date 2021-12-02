@@ -23,7 +23,7 @@ parts:
   tictactoy:
     plugin: meson
     source: https://github.com/alexkdeveloper/tictactoy.git
-    source-branch: 1.x
+    source-branch: main
     meson-parameters: [--prefix=/snap/tictactoy/current/usr]
     organize:
       snap/tictactoy/current/usr: usr
