@@ -19,9 +19,12 @@ parts:
         - valac
         - gettext
         - libgranite-dev
+        - libcanberra-dev
     stage-packages:
         - libgtk-3-dev
         - libgranite-dev
+        - libcanberra0
+        - libpng-dev
   desktop-gnome-platform:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
     source-subdir: gtk
