@@ -21,6 +21,7 @@ parts:
         - libgranite-dev
     stage-packages:
         - libgtk-3-dev
+        - libgranite-dev
   desktop-gnome-platform:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
     source-subdir: gtk
