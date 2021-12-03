@@ -4,6 +4,7 @@ grade: stable
 base: core20
 summary: Simple TIC-TAC-toe game
 description: A simple TIC-TAC-toe game. Get ahead of your opponent by first filling in the fields horizontally, vertically, or diagonally. Don't let your opponent do the same!
+icon: data/icons/48/com.github.alexkdeveloper.tictactoy.png
 confinement: strict
 parts:
   tictactoy:
@@ -12,9 +13,6 @@ parts:
     meson-parameters:
       - --prefix=/usr
     source: https://github.com/alexkdeveloper/tictactoy.git
-    override-build: |
-        snapcraftctl build
-        sed -i -E ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/com.github.alexkdeveloper.tictactoy.desktop
     build-packages:
         - libgirepository1.0-dev
         - valac
