@@ -23,7 +23,6 @@ parts:
         - libclutter-gst-3.0-dev
         - libtag1-dev
         - libtagc0-dev
-        - libcanberra-dev
         - libgupnp-1.2-dev
         - libgupnp-av-1.0-dev
         - libgssdp-1.2-dev
@@ -54,6 +53,7 @@ parts:
         - libgdk-pixbuf2.0-dev
         - libgee-0.8-dev
         - libgraphite2-dev
+        - libgranite-dev
         - libharfbuzz-dev
         - libpango1.0-dev
         - libpangocairo-1.0-0
@@ -69,7 +69,6 @@ parts:
         - libxcb-shm0-dev
         - libxcb1-dev
         - libxkbcommon-dev
-        - libcanberra0
         - libclutter-1.0-0
         - libclutter-gst-3.0-0
         - libclutter-gtk-1.0-0
@@ -81,7 +80,6 @@ parts:
         - libgudev-1.0-0
         - libgupnp-1.2-0
         - libgupnp-av-1.0-2
-        - libgranite-dev
         - libinput10
         - libltdl7
         - libmtdev1
