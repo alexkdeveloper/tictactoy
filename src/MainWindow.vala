@@ -4,15 +4,15 @@ namespace TicTacToe {
 
     public class MainWindow : Gtk.ApplicationWindow {
 
-        private Button b_1;
-        private Button b_2;
-        private Button b_3;
-        private Button b_4;
-        private Button b_5;
-        private Button b_6;
-        private Button b_7;
-        private Button b_8;
-        private Button b_9;
+        private Label l_1;
+        private Label l_2;
+        private Label l_3;
+        private Label l_4;
+        private Label l_5;
+        private Label l_6;
+        private Label l_7;
+        private Label l_8;
+        private Label l_9;
         private string[,] m;
         private bool human_start_X = true;
 
@@ -43,33 +43,69 @@ namespace TicTacToe {
           new_game_button.set_tooltip_text("new game");
           new_game_button.clicked.connect(on_new_game_clicked);
           headerbar.pack_start(new_game_button);
-          b_1 = new Button();
+          var b_1 = new Button();
           b_1.set_size_request(100, 100);
-          b_1.get_style_context().add_class("symbols_size");
-          b_2 = new Button();
+          l_1 = new Label("");
+          b_1.add(l_1);
+          l_1.set_xalign((float)0.5);
+          l_1.set_yalign((float)0.2);
+          l_1.get_style_context().add_class("symbols_size");
+          var b_2 = new Button();
           b_2.set_size_request(100, 100);
-          b_2.get_style_context().add_class("symbols_size");
-          b_3 = new Button();
+          l_2 = new Label("");
+          b_2.add(l_2);
+          l_2.set_xalign((float)0.5);
+          l_2.set_yalign((float)0.2);
+          l_2.get_style_context().add_class("symbols_size");
+          var b_3 = new Button();
           b_3.set_size_request(100, 100);
-          b_3.get_style_context().add_class("symbols_size");
-          b_4 = new Button();
+          l_3 = new Label("");
+          b_3.add(l_3);
+          l_3.set_xalign((float)0.5);
+          l_3.set_yalign((float)0.2);
+          l_3.get_style_context().add_class("symbols_size");
+          var b_4 = new Button();
           b_4.set_size_request(100, 100);
-          b_4.get_style_context().add_class("symbols_size");
-          b_5 = new Button();
+          l_4 = new Label("");
+          b_4.add(l_4);
+          l_4.set_xalign((float)0.5);
+          l_4.set_yalign((float)0.2);
+          l_4.get_style_context().add_class("symbols_size");
+          var b_5 = new Button();
           b_5.set_size_request(100, 100);
-          b_5.get_style_context().add_class("symbols_size");
-          b_6 = new Button();
+          l_5 = new Label("");
+          b_5.add(l_5);
+          l_5.set_xalign((float)0.5);
+          l_5.set_yalign((float)0.2);
+          l_5.get_style_context().add_class("symbols_size");
+          var b_6 = new Button();
           b_6.set_size_request(100, 100);
-          b_6.get_style_context().add_class("symbols_size");
-          b_7 = new Button();
+          l_6 = new Label("");
+          b_6.add(l_6);
+          l_6.set_xalign((float)0.5);
+          l_6.set_yalign((float)0.2);
+          l_6.get_style_context().add_class("symbols_size");
+          var b_7 = new Button();
           b_7.set_size_request(100, 100);
-          b_7.get_style_context().add_class("symbols_size");
-          b_8 = new Button();
+          l_7 = new Label("");
+          b_7.add(l_7);
+          l_7.set_xalign((float)0.5);
+          l_7.set_yalign((float)0.2);
+          l_7.get_style_context().add_class("symbols_size");
+          var b_8 = new Button();
           b_8.set_size_request(100, 100);
-          b_8.get_style_context().add_class("symbols_size");
-          b_9 = new Button();
+          l_8 = new Label("");
+          b_8.add(l_8);
+          l_8.set_xalign((float)0.5);
+          l_8.set_yalign((float)0.2);
+          l_8.get_style_context().add_class("symbols_size");
+          var b_9 = new Button();
           b_9.set_size_request(100, 100);
-          b_9.get_style_context().add_class("symbols_size");
+          l_9 = new Label("");
+          b_9.add(l_9);
+          l_9.set_xalign((float)0.5);
+          l_9.set_yalign((float)0.2);
+          l_9.get_style_context().add_class("symbols_size");
           b_1.clicked.connect(on_b_1_clicked);
           b_2.clicked.connect(on_b_2_clicked);
           b_3.clicked.connect(on_b_3_clicked);
@@ -217,31 +253,31 @@ namespace TicTacToe {
         }
         switch(i){
             case 1:
-                b_1.set_label(s);
+                l_1.set_text(s);
                 break;
             case 2:
-                b_2.set_label(s);
+                l_2.set_text(s);
                 break;
             case 3:
-                b_3.set_label(s);
+                l_3.set_text(s);
                 break;
             case 4:
-                b_4.set_label(s);
+                l_4.set_text(s);
                 break;
             case 5:
-                b_5.set_label(s);
+                l_5.set_text(s);
                 break;
             case 6:
-                b_6.set_label(s);
+                l_6.set_text(s);
                 break;
             case 7:
-                b_7.set_label(s);
+                l_7.set_text(s);
                 break;
             case 8:
-                b_8.set_label(s);
+                l_8.set_text(s);
                 break;
             case 9:
-                b_9.set_label(s);
+                l_9.set_text(s);
                 break;
             default:
                 break;
@@ -270,6 +306,8 @@ namespace TicTacToe {
               logic();
               dialog.destroy ();
               break;
+          default:
+              break;
       }
     }
     private void massive(){
@@ -281,15 +319,15 @@ namespace TicTacToe {
         }
     }
     private void new_game(){
-        b_1.set_label("");
-        b_2.set_label("");
-        b_3.set_label("");
-        b_4.set_label("");
-        b_5.set_label("");
-        b_6.set_label("");
-        b_7.set_label("");
-        b_8.set_label("");
-        b_9.set_label("");
+        l_1.set_text("");
+        l_2.set_text("");
+        l_3.set_text("");
+        l_4.set_text("");
+        l_5.set_text("");
+        l_6.set_text("");
+        l_7.set_text("");
+        l_8.set_text("");
+        l_9.set_text("");
         massive();
     }
     private void logic(){
