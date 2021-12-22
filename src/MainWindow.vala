@@ -13,6 +13,7 @@ namespace TicTacToe {
         private Label l_7;
         private Label l_8;
         private Label l_9;
+        private string a;
         private string[,] m;
         private bool human_start_X = true;
 
@@ -27,7 +28,7 @@ namespace TicTacToe {
       construct {
       var css_provider = new Gtk.CssProvider();
        try {
-                css_provider.load_from_data(".symbols_size {font-size: 60px}");
+                css_provider.load_from_data(".symbols_size {font-size: 60px} .red_symbols {color: red} .green_symbols {color: green}");
                 Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (Error e) {
                 error ("Cannot load CSS stylesheet: %s", e.message);
@@ -328,6 +329,7 @@ namespace TicTacToe {
         l_7.set_text("");
         l_8.set_text("");
         l_9.set_text("");
+        color_reset();
         massive();
     }
     private void logic(){
@@ -352,7 +354,6 @@ namespace TicTacToe {
         s7.append(m[0,0]).append(m[1,1]).append(m[2,2]);
         s8.append(m[2,0]).append(m[1,1]).append(m[0,2]);
 
-        string a;
         string b;
 
         if(human_start_X){
@@ -365,6 +366,7 @@ namespace TicTacToe {
 
         if (s1.str == b+b+b||s2.str == b+b+b||s3.str == b+b+b
                 ||s4.str == b+b+b||s5.str == b+b+b||s6.str == b+b+b||s7.str == b+b+b||s8.str == b+b+b){
+            set_color_symbols(b);
             alert("YOU WON!");
             return;
         }
@@ -374,30 +376,39 @@ namespace TicTacToe {
         }
         if (s1.str == "n"+a+a||s4.str == "n"+a+a||s7.str == "n"+a+a){
             show_symbol(0,0,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s1.str == a+"n"+a||s5.str == "n"+a+a){
             show_symbol(0,1,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s1.str == a+a+"n"||s6.str == "n"+a+a||s8.str == a+a+"n"){
             show_symbol(0,2,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s2.str == "n"+a+a||s4.str == a+"n"+a){
             show_symbol(1,0,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s2.str == a+"n"+a||s5.str == a+"n"+a||s7.str == a+"n"+a||s8.str == a+"n"+a){
             show_symbol(1,1,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s2.str == a+a+"n"||s6.str == a+"n"+a){
             show_symbol(1,2,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s3.str == "n"+a+a||s4.str == a+a+"n"||s8.str == "n"+a+a){
             show_symbol(2,0,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s3.str == a+"n"+a||s5.str == a+a+"n"){
             show_symbol(2,1,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s3.str == a+a+"n"||s6.str == a+a+"n"||s7.str == a+a+"n"){
             show_symbol(2,2,a);
+            set_color_symbols(a);
             alert("YOU LOST!");
         }else if (s1.str == "n"+b+b||s4.str == "n"+b+b||s7.str == "n"+b+b){
             show_symbol(0,0,a);
@@ -438,6 +449,68 @@ namespace TicTacToe {
             }
         }
         return k==9;
+    }
+    private void color_reset(){
+            l_1.get_style_context().remove_class("red_symbols");
+            l_2.get_style_context().remove_class("red_symbols");
+            l_3.get_style_context().remove_class("red_symbols");
+            l_4.get_style_context().remove_class("red_symbols");
+            l_5.get_style_context().remove_class("red_symbols");
+            l_6.get_style_context().remove_class("red_symbols");
+            l_7.get_style_context().remove_class("red_symbols");
+            l_8.get_style_context().remove_class("red_symbols");
+            l_9.get_style_context().remove_class("red_symbols");
+
+            l_1.get_style_context().remove_class("green_symbols");
+            l_2.get_style_context().remove_class("green_symbols");
+            l_3.get_style_context().remove_class("green_symbols");
+            l_4.get_style_context().remove_class("green_symbols");
+            l_5.get_style_context().remove_class("green_symbols");
+            l_6.get_style_context().remove_class("green_symbols");
+            l_7.get_style_context().remove_class("green_symbols");
+            l_8.get_style_context().remove_class("green_symbols");
+            l_9.get_style_context().remove_class("green_symbols");
+    }
+    private void set_color_symbols(string s){
+        string c;
+        if(s == a){
+            c = "red_symbols";
+        }else{
+            c = "green_symbols";
+        }
+        if (l_1.get_text()==s&&l_2.get_text()==s&&l_3.get_text()==s){
+            l_1.get_style_context().add_class(c);
+            l_2.get_style_context().add_class(c);
+            l_3.get_style_context().add_class(c);
+        }else if(l_4.get_text()==s&&l_5.get_text()==s&&l_6.get_text()==s){
+            l_4.get_style_context().add_class(c);
+            l_5.get_style_context().add_class(c);
+            l_6.get_style_context().add_class(c);
+        }else if(l_7.get_text()==s&&l_8.get_text()==s&&l_9.get_text()==s){
+            l_7.get_style_context().add_class(c);
+            l_8.get_style_context().add_class(c);
+            l_9.get_style_context().add_class(c);
+        }else if(l_1.get_text()==s&&l_4.get_text()==s&&l_7.get_text()==s){
+            l_1.get_style_context().add_class(c);
+            l_4.get_style_context().add_class(c);
+            l_7.get_style_context().add_class(c);
+        }else if(l_2.get_text()==s&&l_5.get_text()==s&&l_8.get_text()==s){
+            l_2.get_style_context().add_class(c);
+            l_5.get_style_context().add_class(c);
+            l_8.get_style_context().add_class(c);
+        }else if(l_3.get_text()==s&&l_6.get_text()==s&&l_9.get_text()==s){
+            l_3.get_style_context().add_class(c);
+            l_6.get_style_context().add_class(c);
+            l_9.get_style_context().add_class(c);
+        }else if(l_1.get_text()==s&&l_5.get_text()==s&&l_9.get_text()==s){
+            l_1.get_style_context().add_class(c);
+            l_5.get_style_context().add_class(c);
+            l_9.get_style_context().add_class(c);
+        }else if(l_3.get_text()==s&&l_5.get_text()==s&&l_7.get_text()==s){
+            l_3.get_style_context().add_class(c);
+            l_5.get_style_context().add_class(c);
+            l_7.get_style_context().add_class(c);
+        }
     }
     private void alert (string str){
            var dialog = new Granite.MessageDialog.with_image_from_icon_name ("Message", str, "dialog-warning");
