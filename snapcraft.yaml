@@ -30,7 +30,7 @@ parts:
           - build-essential
           - valac
         stage-packages:
-          - valac-0.48-vapi
+          - valac
     tictactoy:
         after: [granite, desktop-gtk3]
         source: https://github.com/alexkdeveloper/tictactoy.git
