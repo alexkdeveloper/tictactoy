@@ -141,7 +141,10 @@ namespace TicTacToe {
         }else{
             show_symbol(0,0,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
 
       private void on_b_2_clicked(){
@@ -153,7 +156,10 @@ namespace TicTacToe {
         }else{
             show_symbol(0,1,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
 
       private void on_b_3_clicked(){
@@ -165,7 +171,10 @@ namespace TicTacToe {
         }else{
             show_symbol(0,2,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
 
       private void on_b_4_clicked(){
@@ -177,7 +186,10 @@ namespace TicTacToe {
         }else{
             show_symbol(1,0,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
 
       private void on_b_5_clicked(){
@@ -189,7 +201,10 @@ namespace TicTacToe {
         }else{
             show_symbol(1,1,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
 
       private void on_b_6_clicked(){
@@ -201,7 +216,10 @@ namespace TicTacToe {
         }else{
             show_symbol(1,2,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
 
       private void on_b_7_clicked(){
@@ -213,7 +231,10 @@ namespace TicTacToe {
         }else{
             show_symbol(2,0,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
 
       private void on_b_8_clicked(){
@@ -225,7 +246,10 @@ namespace TicTacToe {
         }else{
             show_symbol(2,1,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
 
       private void on_b_9_clicked(){
@@ -237,7 +261,10 @@ namespace TicTacToe {
         }else{
             show_symbol(2,2,"o");
         }
-        logic();
+        Timeout.add_seconds(1, () => {
+            logic();
+            return false;
+        });
       }
       private void show_symbol(int k,int l, string s){
         int i=0;
@@ -287,9 +314,15 @@ namespace TicTacToe {
     }
     private void on_new_game_clicked(){
       var dialog = new Granite.MessageDialog.with_image_from_icon_name ("Question", "Start new game?", "dialog-question", Gtk.ButtonsType.NONE);
-      dialog.add_button ("No", 0);
-      dialog.add_button ("New game with X", 1);
-      dialog.add_button ("New game with O", 2);
+      var no_button = new Button.with_label("No");
+      no_button.get_style_context().add_class("destructive-action");
+      var game_with_x_button = new Button.with_label("New game with X");
+      game_with_x_button.get_style_context().add_class("suggested-action");
+      var game_with_o_button = new Button.with_label("New game with O");
+      game_with_o_button.get_style_context().add_class("suggested-action");
+      dialog.add_action_widget(no_button, 0);
+      dialog.add_action_widget(game_with_x_button, 1);
+      dialog.add_action_widget(game_with_o_button, 2);
       dialog.show_all ();
       int result = dialog.run ();
       switch (result) {
@@ -304,7 +337,10 @@ namespace TicTacToe {
           case 2:
               human_start_X = false;
               new_game();
-              logic();
+              Timeout.add_seconds(1, () => {
+                logic();
+                return false;
+            });
               dialog.destroy ();
               break;
           default:
@@ -519,8 +555,11 @@ namespace TicTacToe {
                   dialog.destroy ();
                   new_game();
                   if(!human_start_X){
-                      logic();
-                  }
+                    Timeout.add_seconds(1, () => {
+                        logic();
+                        return false;
+                    });
+                }
        }
    }
 }
