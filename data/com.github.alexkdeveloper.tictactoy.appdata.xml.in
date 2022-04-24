@@ -51,6 +51,14 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.0.3" date="2022-04-24">
+   <description>
+    <ul>
+      <li>Added timeouts</li>
+      <li>Updated the game selection dialog</li>
+    </ul>
+   </description>
+   </release>
    <release version="1.0.2" date="2021-12-22">
    <description>
     <ul>
