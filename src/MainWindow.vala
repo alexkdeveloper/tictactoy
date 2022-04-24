@@ -4,6 +4,15 @@ namespace TicTacToe {
 
     public class MainWindow : Gtk.ApplicationWindow {
 
+        private Button b_1;
+        private Button b_2;
+        private Button b_3;
+        private Button b_4;
+        private Button b_5;
+        private Button b_6;
+        private Button b_7;
+        private Button b_8;
+        private Button b_9;
         private Label l_1;
         private Label l_2;
         private Label l_3;
@@ -44,63 +53,63 @@ namespace TicTacToe {
           new_game_button.set_tooltip_text("new game");
           new_game_button.clicked.connect(on_new_game_clicked);
           headerbar.pack_start(new_game_button);
-          var b_1 = new Button();
+          b_1 = new Button();
           b_1.set_size_request(100, 100);
           l_1 = new Label("");
           b_1.add(l_1);
           l_1.set_xalign((float)0.5);
           l_1.set_yalign((float)0.2);
           l_1.get_style_context().add_class("symbols_size");
-          var b_2 = new Button();
+          b_2 = new Button();
           b_2.set_size_request(100, 100);
           l_2 = new Label("");
           b_2.add(l_2);
           l_2.set_xalign((float)0.5);
           l_2.set_yalign((float)0.2);
           l_2.get_style_context().add_class("symbols_size");
-          var b_3 = new Button();
+          b_3 = new Button();
           b_3.set_size_request(100, 100);
           l_3 = new Label("");
           b_3.add(l_3);
           l_3.set_xalign((float)0.5);
           l_3.set_yalign((float)0.2);
           l_3.get_style_context().add_class("symbols_size");
-          var b_4 = new Button();
+          b_4 = new Button();
           b_4.set_size_request(100, 100);
           l_4 = new Label("");
           b_4.add(l_4);
           l_4.set_xalign((float)0.5);
           l_4.set_yalign((float)0.2);
           l_4.get_style_context().add_class("symbols_size");
-          var b_5 = new Button();
+          b_5 = new Button();
           b_5.set_size_request(100, 100);
           l_5 = new Label("");
           b_5.add(l_5);
           l_5.set_xalign((float)0.5);
           l_5.set_yalign((float)0.2);
           l_5.get_style_context().add_class("symbols_size");
-          var b_6 = new Button();
+          b_6 = new Button();
           b_6.set_size_request(100, 100);
           l_6 = new Label("");
           b_6.add(l_6);
           l_6.set_xalign((float)0.5);
           l_6.set_yalign((float)0.2);
           l_6.get_style_context().add_class("symbols_size");
-          var b_7 = new Button();
+          b_7 = new Button();
           b_7.set_size_request(100, 100);
           l_7 = new Label("");
           b_7.add(l_7);
           l_7.set_xalign((float)0.5);
           l_7.set_yalign((float)0.2);
           l_7.get_style_context().add_class("symbols_size");
-          var b_8 = new Button();
+          b_8 = new Button();
           b_8.set_size_request(100, 100);
           l_8 = new Label("");
           b_8.add(l_8);
           l_8.set_xalign((float)0.5);
           l_8.set_yalign((float)0.2);
           l_8.get_style_context().add_class("symbols_size");
-          var b_9 = new Button();
+          b_9 = new Button();
           b_9.set_size_request(100, 100);
           l_9 = new Label("");
           b_9.add(l_9);
@@ -266,6 +275,19 @@ namespace TicTacToe {
             return false;
         });
       }
+
+      private void buttons_activated(bool b){
+          b_1.set_sensitive(b);
+          b_2.set_sensitive(b);
+          b_3.set_sensitive(b);
+          b_4.set_sensitive(b);
+          b_5.set_sensitive(b);
+          b_6.set_sensitive(b);
+          b_7.set_sensitive(b);
+          b_8.set_sensitive(b);
+          b_9.set_sensitive(b);
+      }
+
       private void show_symbol(int k,int l, string s){
         int i=0;
         switch (k) {
@@ -337,8 +359,10 @@ namespace TicTacToe {
           case 2:
               human_start_X = false;
               new_game();
+              buttons_activated(false);
               Timeout.add_seconds(1, () => {
                 logic();
+                buttons_activated(true);
                 return false;
             });
               dialog.destroy ();
@@ -555,8 +579,10 @@ namespace TicTacToe {
                   dialog.destroy ();
                   new_game();
                   if(!human_start_X){
+                    buttons_activated(false);
                     Timeout.add_seconds(1, () => {
                         logic();
+                        buttons_activated(true);
                         return false;
                     });
                 }
