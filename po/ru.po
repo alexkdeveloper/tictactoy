@@ -21,7 +21,7 @@ msgstr ""
 #: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:7
 #: data/com.github.alexkdeveloper.tictactoy.desktop.in:4
 msgid "TicTacToy"
-msgstr "TikTacToy"
+msgstr "TicTacToy"
 
 #: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:8
 #: data/com.github.alexkdeveloper.tictactoy.desktop.in:5
