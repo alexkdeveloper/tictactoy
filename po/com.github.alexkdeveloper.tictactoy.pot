@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.alexkdeveloper.tictactoy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-28 21:45+0900\n"
+"POT-Creation-Date: 2022-09-28 23:49+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,26 +39,30 @@ msgid "Alex Kryuchkov"
 msgstr ""
 
 #: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:29
-msgid "Update to elementary platform version 7"
+msgid "Added Russian translation"
 msgstr ""
 
 #: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:36
+msgid "Update to elementary platform version 7"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:43
 msgid "Added timeouts"
 msgstr ""
 
-#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:37
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:44
 msgid "Updated the game selection dialog"
 msgstr ""
 
-#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:44
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:51
 msgid "Correction of the display of symbols on the playing field"
 msgstr ""
 
-#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:51
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:58
 msgid "Update to elementary platform version 6.1"
 msgstr ""
 
-#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:58
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:65
 msgid "Initial release"
 msgstr ""
 
