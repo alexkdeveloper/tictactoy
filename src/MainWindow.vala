@@ -50,7 +50,7 @@ namespace TicTacToe {
         var new_game_button = new Gtk.Button ();
             new_game_button.set_image (new Gtk.Image.from_icon_name ("input-gaming", Gtk.IconSize.LARGE_TOOLBAR));
             new_game_button.vexpand = false;
-          new_game_button.set_tooltip_text("new game");
+          new_game_button.set_tooltip_text(_("New game"));
           new_game_button.clicked.connect(on_new_game_clicked);
           headerbar.pack_start(new_game_button);
           b_1 = new Button();
@@ -335,12 +335,12 @@ namespace TicTacToe {
         m[k,l]=s;
     }
     private void on_new_game_clicked(){
-      var dialog = new Granite.MessageDialog.with_image_from_icon_name ("Question", "Start new game?", "dialog-question", Gtk.ButtonsType.NONE);
-      var no_button = new Button.with_label("No");
+      var dialog = new Granite.MessageDialog.with_image_from_icon_name (_("Question"), _("Start new game?"), "dialog-question", Gtk.ButtonsType.NONE);
+      var no_button = new Button.with_label(_("No"));
       no_button.get_style_context().add_class("destructive-action");
-      var game_with_x_button = new Button.with_label("New game with X");
+      var game_with_x_button = new Button.with_label(_("New game with X"));
       game_with_x_button.get_style_context().add_class("suggested-action");
-      var game_with_o_button = new Button.with_label("New game with O");
+      var game_with_o_button = new Button.with_label(_("New game with O"));
       game_with_o_button.get_style_context().add_class("suggested-action");
       dialog.add_action_widget(no_button, 0);
       dialog.add_action_widget(game_with_x_button, 1);
@@ -427,49 +427,49 @@ namespace TicTacToe {
         if (s1.str == b+b+b||s2.str == b+b+b||s3.str == b+b+b
                 ||s4.str == b+b+b||s5.str == b+b+b||s6.str == b+b+b||s7.str == b+b+b||s8.str == b+b+b){
             set_color_symbols(b);
-            alert("YOU WON!");
+            alert(_("YOU WON!"));
             return;
         }
         if (is_last()){
-            alert("DRAWN GAME!");
+            alert(_("DRAWN GAME!"));
             return;
         }
         if (s1.str == "n"+a+a||s4.str == "n"+a+a||s7.str == "n"+a+a){
             show_symbol(0,0,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s1.str == a+"n"+a||s5.str == "n"+a+a){
             show_symbol(0,1,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s1.str == a+a+"n"||s6.str == "n"+a+a||s8.str == a+a+"n"){
             show_symbol(0,2,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s2.str == "n"+a+a||s4.str == a+"n"+a){
             show_symbol(1,0,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s2.str == a+"n"+a||s5.str == a+"n"+a||s7.str == a+"n"+a||s8.str == a+"n"+a){
             show_symbol(1,1,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s2.str == a+a+"n"||s6.str == a+"n"+a){
             show_symbol(1,2,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s3.str == "n"+a+a||s4.str == a+a+"n"||s8.str == "n"+a+a){
             show_symbol(2,0,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s3.str == a+"n"+a||s5.str == a+a+"n"){
             show_symbol(2,1,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s3.str == a+a+"n"||s6.str == a+a+"n"||s7.str == a+a+"n"){
             show_symbol(2,2,a);
             set_color_symbols(a);
-            alert("YOU LOST!");
+            alert(_("YOU LOST!"));
         }else if (s1.str == "n"+b+b||s4.str == "n"+b+b||s7.str == "n"+b+b){
             show_symbol(0,0,a);
         }else if (s1.str == b+"n"+b||s5.str == "n"+b+b){
@@ -573,7 +573,7 @@ namespace TicTacToe {
         }
     }
     private void alert (string str){
-           var dialog = new Granite.MessageDialog.with_image_from_icon_name ("Message", str, "dialog-warning");
+           var dialog = new Granite.MessageDialog.with_image_from_icon_name (_("Message"), str, "dialog-warning");
                   dialog.show_all ();
                   dialog.run ();
                   dialog.destroy ();
