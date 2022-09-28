@@ -1,0 +1,4 @@
+data/com.github.alexkdeveloper.tictactoy.appdata.xml.in
+data/com.github.alexkdeveloper.tictactoy.desktop.in
+src/Application.vala
+src/MainWindow.vala

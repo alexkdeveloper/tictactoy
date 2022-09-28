@@ -1,0 +1,113 @@
+# Russian translation for com.github.alexkdeveloper.tictactoy.
+# Copyright (C) 2022 THE com.github.alexkdeveloper.tictactoy'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.alexkdeveloper.tictactoy package.
+# lenemter <lenemter@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.alexkdeveloper.tictactoy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-28 21:45+0900\n"
+"PO-Revision-Date: 2022-09-28 21:26+0900\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:7
+#: data/com.github.alexkdeveloper.tictactoy.desktop.in:4
+msgid "TicTacToy"
+msgstr "TikTacToy"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:8
+#: data/com.github.alexkdeveloper.tictactoy.desktop.in:5
+msgid "Simple TIC-TAC-toe game"
+msgstr "Простая игра крестики-нолики"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:10
+msgid ""
+"A simple TIC-TAC-toe game. Get ahead of your opponent by first filling in "
+"the fields horizontally, vertically, or diagonally. Don't let your opponent "
+"do the same!"
+msgstr ""
+"Простая игра крестики-нолики. Опередите своего соперника и заполните 3 поля "
+"по горизонтали, вертикали или диагонали. Не дайте своему сопернику сделать "
+"то же самое!"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:15
+msgid "Alex Kryuchkov"
+msgstr "Alex Kryuchkov"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:29
+msgid "Update to elementary platform version 7"
+msgstr "Обновлено до elementary platform 7"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:36
+msgid "Added timeouts"
+msgstr "Добавлены таймауты"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:37
+msgid "Updated the game selection dialog"
+msgstr "Обновлён диалог выбора игры"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:44
+msgid "Correction of the display of symbols on the playing field"
+msgstr "Исправлено отображение символов на игровом поле"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:51
+msgid "Update to elementary platform version 6.1"
+msgstr "Обновлено до elementary platform 6.1"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:58
+msgid "Initial release"
+msgstr "Начальный релиз"
+
+#: data/com.github.alexkdeveloper.tictactoy.desktop.in:10
+msgid "tictactoe;game;logic;"
+msgstr "крестики-нолики;игра;логика;"
+
+#: src/MainWindow.vala:53
+msgid "New game"
+msgstr "Новая игра"
+
+#: src/MainWindow.vala:338
+msgid "Question"
+msgstr "Вопрос"
+
+#: src/MainWindow.vala:338
+msgid "Start new game?"
+msgstr "Начать новую игру?"
+
+#: src/MainWindow.vala:339
+msgid "No"
+msgstr "Нет"
+
+#: src/MainWindow.vala:341
+msgid "New game with X"
+msgstr "Начать X-ми"
+
+#: src/MainWindow.vala:343
+msgid "New game with O"
+msgstr "Начать O-ми"
+
+#: src/MainWindow.vala:430
+msgid "YOU WON!"
+msgstr "ВЫ ПОБЕДИЛИ!"
+
+#: src/MainWindow.vala:434
+msgid "DRAWN GAME!"
+msgstr "НИЧЬЯ!"
+
+#: src/MainWindow.vala:440 src/MainWindow.vala:444 src/MainWindow.vala:448
+#: src/MainWindow.vala:452 src/MainWindow.vala:456 src/MainWindow.vala:460
+#: src/MainWindow.vala:464 src/MainWindow.vala:468 src/MainWindow.vala:472
+msgid "YOU LOST!"
+msgstr "ВЫ ПРОИГРАЛИ!"
+
+#: src/MainWindow.vala:576
+msgid "Message"
+msgstr "Сообщение"
