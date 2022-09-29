@@ -26,7 +26,7 @@ msgstr "TicTacToy"
 #: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:8
 #: data/com.github.alexkdeveloper.tictactoy.desktop.in:5
 msgid "Simple TIC-TAC-toe game"
-msgstr "Простая игра крестики-нолики"
+msgstr "Простая игра в крестики-нолики"
 
 #: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:10
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "the fields horizontally, vertically, or diagonally. Don't let your opponent "
 "do the same!"
 msgstr ""
-"Простая игра крестики-нолики. Опередите своего соперника и заполните 3 поля "
+"Простая игра в крестики-нолики. Опередите своего соперника и заполните 3 поля "
 "по горизонтали, вертикали или диагонали. Не дайте своему сопернику сделать "
 "то же самое!"
 
@@ -92,11 +92,11 @@ msgstr "Нет"
 
 #: src/MainWindow.vala:341
 msgid "New game with X"
-msgstr "Начать X-ми"
+msgstr "Играть крестиками"
 
 #: src/MainWindow.vala:343
 msgid "New game with O"
-msgstr "Начать O-ми"
+msgstr "Играть ноликами"
 
 #: src/MainWindow.vala:430
 msgid "YOU WON!"
