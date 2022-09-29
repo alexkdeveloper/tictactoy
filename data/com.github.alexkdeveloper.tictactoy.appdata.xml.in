@@ -18,6 +18,7 @@
   <url type="help">http://github.com/alexkdeveloper/tictactoy/issues</url>
   <screenshots>
     <screenshot type="default">
+    <caption>Simple TIC-TAC-toe game</caption>
     <image>https://raw.githubusercontent.com/alexkdeveloper/tictactoy/main/data/screenshot.png</image>
     </screenshot>
   </screenshots>
