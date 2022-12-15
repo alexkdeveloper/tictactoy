@@ -1,0 +1,115 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.alexkdeveloper.tictactoy package.
+#
+# Heimen Stoffels <vistausss@fastmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.alexkdeveloper.tictactoy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-28 23:49+0900\n"
+"PO-Revision-Date: 2022-12-15 11:42+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.12.0\n"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:7
+#: data/com.github.alexkdeveloper.tictactoy.desktop.in:4
+msgid "TicTacToy"
+msgstr "TicTacToy"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:8
+#: data/com.github.alexkdeveloper.tictactoy.desktop.in:5
+msgid "Simple TIC-TAC-toe game"
+msgstr "Eenvoudig boter-kaas-en-eierenspel"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:10
+msgid ""
+"A simple TIC-TAC-toe game. Get ahead of your opponent by first filling in "
+"the fields horizontally, vertically, or diagonally. Don't let your opponent "
+"do the same!"
+msgstr ""
+"Een eenvoudig boter-kaas-en-eierenspel. Versla de tegenstander door als"
+" eerste alle horizontale, verticale of diagonale vakjes in te pikken!"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:15
+msgid "Alex Kryuchkov"
+msgstr "Alex Kryuchkov"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:29
+msgid "Added Russian translation"
+msgstr "Nieuw: Russische vertaling"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:36
+msgid "Update to elementary platform version 7"
+msgstr "Bijgewerkt naar elementary-platform 7"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:43
+msgid "Added timeouts"
+msgstr "Nieuw: onderbrekingen"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:44
+msgid "Updated the game selection dialog"
+msgstr "Bijgewerkt: spelkeuzevenster"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:51
+msgid "Correction of the display of symbols on the playing field"
+msgstr "Opgelost: weergave van symbolen op het speelveld"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:58
+msgid "Update to elementary platform version 6.1"
+msgstr "Bijgewerkt naar elementary-platform 6.1"
+
+#: data/com.github.alexkdeveloper.tictactoy.appdata.xml.in:65
+msgid "Initial release"
+msgstr "Eerste versie"
+
+#: data/com.github.alexkdeveloper.tictactoy.desktop.in:10
+msgid "tictactoe;game;logic;"
+msgstr "boter;kaas;eieren;game;spel;logica;"
+
+#: src/MainWindow.vala:53
+msgid "New game"
+msgstr "Nieuw spel"
+
+#: src/MainWindow.vala:338
+msgid "Question"
+msgstr "Vraag"
+
+#: src/MainWindow.vala:338
+msgid "Start new game?"
+msgstr "Wilt u een nieuw spel starten?"
+
+#: src/MainWindow.vala:339
+msgid "No"
+msgstr "Nee"
+
+#: src/MainWindow.vala:341
+msgid "New game with X"
+msgstr "Nieuw spel met X"
+
+#: src/MainWindow.vala:343
+msgid "New game with O"
+msgstr "Nieuw spel met O"
+
+#: src/MainWindow.vala:430
+msgid "YOU WON!"
+msgstr "U HEEFT GEWONNEN!"
+
+#: src/MainWindow.vala:434
+msgid "DRAWN GAME!"
+msgstr "GELIJKSPEL!"
+
+#: src/MainWindow.vala:440 src/MainWindow.vala:444 src/MainWindow.vala:448
+#: src/MainWindow.vala:452 src/MainWindow.vala:456 src/MainWindow.vala:460
+#: src/MainWindow.vala:464 src/MainWindow.vala:468 src/MainWindow.vala:472
+msgid "YOU LOST!"
+msgstr "U HEEFT VERLOREN!"
+
+#: src/MainWindow.vala:576
+msgid "Message"
+msgstr "Bericht"
